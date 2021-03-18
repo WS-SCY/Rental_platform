@@ -67,38 +67,43 @@
 
 
   <van-dropdown-item title="筛选" ref="item">
-    <div>
-    </div>
+    <div style="text-align : left">
+      
+      <van-radio-group v-model="gender_other" direction="horizontal">
+        <div style="margin-left:30px ">
+          <a style=" font-weight:bold">性别 </a>
+          <van-radio name="1">全部</van-radio>
+          <van-radio name="2">男</van-radio>
+          <van-radio name="3">女</van-radio>
+        </div> 
+        <div style="margin-left:30px "> 
+          <a style=" font-weight:bold">类型 </a>
+          <van-radio name="4">转租单间</van-radio>
+          <van-radio name="5">转租整间</van-radio>
+          <van-radio name="6">找室友</van-radio>
+          <van-radio name="7">求合租</van-radio>
+          <van-radio name="8">求整租</van-radio> 
+          <van-radio name="9">整套出租</van-radio> 
+          <van-radio name="10">单间出租</van-radio> 
+        </div>
+ 
+      </van-radio-group>
+     
+    </div>  
+  </van-dropdown-item> 
+    <van-dropdown-item v-model="value1" :options="option1" />
   </van-dropdown-item>
 
-  <van-dropdown-item title="筛选" ref="item">
-    <van-cell center title="包邮">
-      <template #right-icon>
-        <van-switch v-model="switch1" size="24" active-color="#ee0a24" />
-      </template>
-    </van-cell>
-    <van-cell center title="团购">
-      <template #right-icon>
-        <van-switch v-model="switch2" size="24" active-color="#ee0a24" />
-      </template>
-    </van-cell>
-    <div style="padding: 5px 16px;">
-      <van-button type="danger" block round @click="onConfirm">
-        确认
-      </van-button>
-    </div>
-  </van-dropdown-item>3
+
 </van-dropdown-menu>
 
 
 
 
     <van-row>
-      <van-col span="24">
-        <van-tabs @click="onClick" sticky title-active-color="#E32DAB" color="#E32DAB" :line-width="100" :line-height="2"> 
-          <!-- 展示区域 -->
-          <!-- <van-tab v-for="index in categories.length" :title="categories[index-1].name" class="tab"> 
-            <van-card v-for="(item,index) in phones"
+      <van-col span="24"> 
+          <!-- 展示区域 --> 
+            <!-- <van-card v-for="(item,index) in phones"
                       :price="item.price"
                       :desc="item.desc"
                       :title="item.title"
@@ -110,19 +115,15 @@
               <template #footer>
                 <van-button round type="info" size="mini" @click="buy(index)">购买</van-button>
               </template>
-            </van-card>
-
-          </van-tab> -->
-        </van-tabs>
+            </van-card>   -->
       </van-col>
     </van-row>
     
 
     <van-tabbar v-model="active">
-  <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="search">标签</van-tabbar-item>
-  <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-  <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+  <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar-item icon="back-top">发布</van-tabbar-item>
+  <van-tabbar-item icon="user-o">我的</van-tabbar-item>  
 </van-tabbar>
 
 
@@ -177,8 +178,14 @@
         goods: '',
         searchvalue: "",//查询
         //下拉菜单
-        // activeIndex,
-        // activeId,
+        value1: 0, 
+        option1: [
+          { text: '默认排序', value: 0 },
+          { text: '价格最低', value: 1 },
+          { text: '时间最新', value: 2 },
+          { text: '距离最近', value: 3 }, 
+
+        ],
         locationItems:[ 
           {
             text:"商圈",
@@ -233,7 +240,7 @@
         ],
       activeId: 1,
       activeIndex: 0,
-
+      gender_other:'1', 
       money: [0,2500 ],//价格区间
         
         active: 0,  //下面的切换
