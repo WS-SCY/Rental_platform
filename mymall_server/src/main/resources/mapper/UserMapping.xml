@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mymall.dao.UserDao">
+    <select id="getUserByMessage" resultType="com.mymall.bean.User">
+        SELECT * FROM user
+        WHERE login_password = #{login_password} AND login_tel = #{login_tel};
+    </select>
+
+
+</mapper>

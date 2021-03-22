@@ -32,5 +32,8 @@ create table picture(
 	houseid varchar(20) not null,
 	picurl varchar(200) not null
 );
+
+alter  table house add introduction varchar(500) default null after icon;
+
  
  
