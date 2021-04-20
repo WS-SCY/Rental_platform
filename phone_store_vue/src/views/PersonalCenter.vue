@@ -4,8 +4,8 @@
     </van-nav-bar>
     <van-card   
       desc="超级管理员账号"
-      title="天天向上"
-      thumb="../static/logo.jpg" 
+      title="Ghibli"
+      thumb="../static/logo.png" 
       id = "mylogo"
     />
     <van-grid clickable = true :column-num="2">

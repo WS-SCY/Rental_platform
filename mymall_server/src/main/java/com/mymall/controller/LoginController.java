@@ -2,8 +2,10 @@ package com.mymall.controller;
 import com.alibaba.fastjson.JSON;
 import com.mymall.bean.User;
 import com.mymall.dao.UserDao;
+import com.mymall.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 public class LoginController {
@@ -19,9 +21,4 @@ public class LoginController {
         return JSON.toJSONString(us);
     }
 
-    @GetMapping("/test")
-    public String login(){
-        return "123";
-//        return JSON.toJSONString(us);
-    }
 }

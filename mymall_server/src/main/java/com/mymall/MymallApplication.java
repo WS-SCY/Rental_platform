@@ -12,3 +12,13 @@ public class MymallApplication {
     }
 
 }
+
+
+
+
+// // 打包war需要这个启动类，发布到服务器上
+// @Override
+// protected SpringApplicationBuilder configure(SpringApplicationBuilder application){
+//    System.out.print("视频上传项目启动类2.==="+"\n");
+//    return application.sources(ShangchuanApplication.class);
+// }
